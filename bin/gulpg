@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var path = require('path');
+var globalGulpFile = path.join(__dirname, '../gulpfile-global.js');
+
+function copy(src, dest, cb) {
+    fs.createReadStream(src).pipe(fs.createWriteStream(dest).on('end', cb));
+}
+
+console.log(path);
